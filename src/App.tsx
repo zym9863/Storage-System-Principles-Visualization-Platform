@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CacheSimulator from './components/CacheSimulator';
 import MemoryAddressing from './components/MemoryAddressing';
 import './App.css'; // Keep existing App.css for basic app layout/reset if needed

@@ -69,7 +69,7 @@ const CacheSimulator: React.FC = () => {
     const newSimulationSteps: any[] = [];
     let lruCounterGlobal = 0; // Global LRU counter for tie-breaking in fully associative
 
-    addresses.forEach((address, accessIndex) => {
+    addresses.forEach((address) => {
       const { tag, index, offset, offsetBits, indexBits, tagBits } = parseAddress(address);
       let hit = false;
       let replacedLineIndex: number | null = null;

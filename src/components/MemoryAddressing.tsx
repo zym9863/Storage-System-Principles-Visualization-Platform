@@ -56,7 +56,7 @@ const MemoryAddressing: React.FC = () => {
   // Initialize page table for virtual memory
   React.useEffect(() => {
     const numLogicalPages = 2 ** config.logicalAddressBits / config.pageSize;
-    const initialPageTable: PageTableEntry[] = Array.from({ length: numLogicalPages }, (_, i) => ({
+    const initialPageTable: PageTableEntry[] = Array.from({ length: numLogicalPages }, () => ({
       valid: Math.random() > 0.7, // Simulate some pages being in memory
       frameNumber: Math.floor(Math.random() * (2 ** (config.physicalAddressBits - Math.log2(config.pageSize)))),
     }));
@@ -198,7 +198,7 @@ const MemoryAddressing: React.FC = () => {
         <label>
           寻址方式:
           <select name="mode" value={config.mode} onChange={handleConfigChange}>
-            {addressingModes.map(mode => (
+            {addressingModes.map((mode) => (
               <option key={mode.name} value={mode.name}>{mode.description}</option>
             ))}
           </select>
